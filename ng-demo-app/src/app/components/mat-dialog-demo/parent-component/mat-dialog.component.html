@@ -1,0 +1,21 @@
+<div class="card-body">
+  <h1 mat-dialog-title>Chemical</h1>
+  <div mat-dialog-content>
+    <mat-list>
+      <mat-list-item>No: {{data.chemData.position}}</mat-list-item>
+      <mat-list-item>Symbol: {{data.chemData.symbol}} </mat-list-item>
+      <mat-list-item>Name: {{data.chemData.name}} </mat-list-item>
+      <mat-list-item>Weight: {{data.chemData.weight}} </mat-list-item>
+
+    </mat-list>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Leave a Comment</mat-label>
+      <textarea matInput placeholder="" [(ngModel)]="data.comment"></textarea>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+
+    <button mat-raised-button color="primary" [mat-dialog-close]="onCloseDialog" [mat-dialog-close]="data.comment" cdkFocusInitial >Submit</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  </div>
+</div>
