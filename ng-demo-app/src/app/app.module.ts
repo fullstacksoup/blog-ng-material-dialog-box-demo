@@ -6,15 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { ParentComponentComponent, MatDialogDemo } from './components/mat-dialog-demo/parent-component/parent-component.component';
+//import { ParentLayoutold, MatDialogDemo } from './components/mat-dialog-demo/parent-layout-old/parent-layout.component';
 import { DialogDemoDataTableComponent } from './components/mat-dialog-demo/dialog-demo-data-table/dialog-demo-data-table.component';
+import { ParentLayoutComponent, MatDialogDemo } from './components/mat-dialog-demo/parent-layout/parent-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ParentComponentComponent,
+    ParentLayoutComponent,
     MatDialogDemo,
     DialogDemoDataTableComponent
+
   ],
   imports: [
     BrowserModule,
@@ -24,12 +26,12 @@ import { DialogDemoDataTableComponent } from './components/mat-dialog-demo/dialo
     HttpClientModule,
     HttpClientJsonpModule,
     BrowserAnimationsModule,
-    FormsModule,    
+    FormsModule,
     MaterialModule
   ],
   providers: [],
   entryComponents: [
-    MatDialogDemo
+   // MatDialogDemo
   ],
   bootstrap: [AppComponent]
 })

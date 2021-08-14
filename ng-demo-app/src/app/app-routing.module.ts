@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ParentComponentComponent } from './components/mat-dialog-demo/parent-component/parent-component.component';
+import { ParentLayoutComponent } from './components/mat-dialog-demo/parent-layout/parent-layout.component';
+
 const routes: Routes = [
   {
     path: '',
-    component: ParentComponentComponent
+    component: ParentLayoutComponent
   },
   {
     path: 'dialog-demo',
-    component: ParentComponentComponent
+    component: ParentLayoutComponent
   }
 
 ]

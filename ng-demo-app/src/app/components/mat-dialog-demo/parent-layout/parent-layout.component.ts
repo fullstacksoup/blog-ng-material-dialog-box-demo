@@ -12,11 +12,11 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'app-parent-component',
-  templateUrl: './parent-component.component.html',
-  styleUrls: ['./parent-component.component.scss']
+  selector: 'app-parent-layout',
+  templateUrl: './parent-layout.component.html',
+  styleUrls: ['./parent-layout.component.scss']
 })
-export class ParentComponentComponent implements OnInit, OnDestroy {
+export class ParentLayoutComponent implements OnInit, OnDestroy {
   private data: any[] = [];
   private subs = new Subscription();
   public record: IChemicals;
@@ -24,7 +24,7 @@ export class ParentComponentComponent implements OnInit, OnDestroy {
   constructor(private dataSVC: DataService,
               private snackBar: MatSnackBar,
               private dialog: MatDialog) {}
-    
+
   ngOnInit(): void {
     this.subs.add(
       this.dataSVC.getAll()
@@ -36,13 +36,13 @@ export class ParentComponentComponent implements OnInit, OnDestroy {
         console.log(err);
       }));
   }
-  
+
   ngOnDestroy(): void {
     if (this.subs) {
      this.subs.unsubscribe();
     }
   }
-  
+
 
   // ************************************************************************************************************************
   // * COMPONENT FUNCTIONS
@@ -57,19 +57,19 @@ export class ParentComponentComponent implements OnInit, OnDestroy {
   }
 
   openDialog(id: number): void {
-    this.record = this.data.filter(c => c.position === id)[0];    
+    this.record = this.data.filter(c => c.position === id)[0];
 
     const dialogRef = this.dialog.open(MatDialogDemo, {
       width: '450px',
       height: '375px',
       data: {chemData: this.record}
-      
+
     });
 
-    dialogRef.afterClosed().subscribe(result => {      
+    dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.openSnackBar(`Message From Dialog:  ${result}`, 'Close')  
-      }            
+        this.openSnackBar(`Message From Dialog:  ${result}`, 'Close')
+      }
     });
   }
 }
@@ -90,8 +90,6 @@ export class MatDialogDemo {
     this.dialogRef.close();
   }
 
-  formatImage(img: any): any {
-    return 'data:image/jpeg;base64,' + img;
-  }
+
 }
 

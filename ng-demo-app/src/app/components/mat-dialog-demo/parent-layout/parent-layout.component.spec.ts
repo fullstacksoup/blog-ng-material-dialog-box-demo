@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParentComponentComponent } from './parent-component.component';
+import { ParentLayoutComponent } from './parent-layout.component';
 
-describe('ParentComponentComponent', () => {
-  let component: ParentComponentComponent;
-  let fixture: ComponentFixture<ParentComponentComponent>;
+describe('ParentLayoutComponent', () => {
+  let component: ParentLayoutComponent;
+  let fixture: ComponentFixture<ParentLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParentComponentComponent ]
+      declarations: [ ParentLayoutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ParentComponentComponent);
+    fixture = TestBed.createComponent(ParentLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
